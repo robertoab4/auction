@@ -99,4 +99,18 @@ public class Auction
             return null;
         }
     }
+    /**
+     * Closes the auction selling the products if they hav a bid 
+     */
+    public void close(){
+        for (Lot lot : lots){
+            if (lot.getHighestBid() == null){
+                System.out.println(lot.getDescription() + " no ha obtenido ninguna puja y no se ha vendido");
+            }    
+            else{
+                System.out.println(lot.getHighestBid().getBidder().getName() + " ha comprado " + lot.getDescription() + " por " + lot.getHighestBid().getValue() + "€");
+                
+            }
+        }        
+    }
 }
