@@ -99,8 +99,9 @@ public class Auction
             return null;
         }
     }
+    
     /**
-     * Closes the auction selling the products if they hav a bid 
+     * Closes the auction selling the products if they have a bid 
      */
     public void close(){
         for (Lot lot : lots){
@@ -112,5 +113,21 @@ public class Auction
                 
             }
         }        
+    }
+    
+    public ArrayList<Lot> getUnsoId(){
+        ArrayList<Lot> lotsNotSold = new ArrayList<Lot>();
+        int number = 1;
+        for (Lot lot : lots){
+            if (lot.getHighestBid() == null){
+                lotsNotSold.add(lot);
+                number++;
+                /*lots.add(new Lot(nextLotNumber, description));
+                nextLotNumber++;
+                */
+               System.out.println(lotsNotSold);
+            }
+        }
+        return lotsNotSold;
     }
 }
