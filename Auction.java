@@ -146,17 +146,9 @@ public class Auction
      * @param number El número del lote que hay que eliminar,
      * @return El lote con el número dado o null si no existe tal lote.
      */
-    public Lot removeLot(int number){
-        int numberLot = 0;
-        Lot selectedLot = null;
-        while(numberLot < number){
-            if(number <= lots.size()){
-                if(lots.get(numberLot).getNumber() == number){
-                    selectedLot = lots.remove(numberLot);    
-                }
-            }
-            numberLot++;
-        }        
+    public Lot removeLot(int number){       
+        Lot selectedLot = getLot(number);
+        lots.remove(selectedLot);        
         return selectedLot;
     }
 }
